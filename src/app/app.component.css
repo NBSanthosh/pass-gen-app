@@ -1,0 +1,103 @@
+h1 {
+    /* color: #29f8cb; */
+    color: chartreuse;
+    font-size: 2.5em;
+    border: #000;
+    text-shadow: 2px 3px black;
+}
+h2 {
+    color: rgb(29, 250, 36);
+    text-overflow: ellipsis;
+}
+.center {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+}
+.container { 
+    justify-content: center;
+    display: flex;
+    border: 3px solid #e7e7e7;
+    padding-top: 40px;
+    padding: 4px;
+    align-self: center;
+    text-align: center;
+}
+.inner-cont {
+    color: rgb(255, 0, 0);
+    font-size: small;
+    font-weight: lighter;
+    text-align: justify;
+}
+/* label{
+    color: white;
+}  */
+label {
+    color: rgb(247, 220, 15);
+    font-size: medium;
+    font-weight: 700;
+    /* display: block; */
+    text-align: center;
+    line-height: 150%;
+    font-size: 2em;
+    letter-spacing: normal;
+}  
+/* input[type=text] {
+    width: 100%;
+    padding: 10px 25px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+  } */
+.w3-input {
+    padding:8px;
+    display:block;
+    border:none;
+    border-bottom:1px solid #ccc;
+    width:100%
+} 
+  .w3-animate-input {
+    transition:width 0.4s ease-in-out
+}
+  .w3-border {
+    border:1px solid #ccc!important
+}
+  .w3-sand,.w3-hover-sand:hover {
+    color:#000!important;
+    background-color:#fdf5e6!important
+}
+  .w3-card-4 {
+    /* background-color: rgb(28, 29, 8); */
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 4px 25px 0 rgba(0, 0, 0, 0.19); 
+    letter-spacing: 0%;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2em;
+    padding-left: 2em;
+    border-radius: 10px;
+    border: 1px whitesmoke solid;
+    background-color: rgb(13, 37, 64);
+  }
+/* input { 
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 5px solid #29f8cb;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}  */
+button {
+    color: black;
+    border: 2px solid #e7e7e7;
+    background-color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+button:hover {
+    background-color: #29f8cb;
+    border-color: black;
+}
