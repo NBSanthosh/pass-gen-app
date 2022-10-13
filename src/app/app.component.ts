@@ -13,7 +13,6 @@ export class AppComponent {
   pass = '';
   passwo = '';
   textHidden = false;
-  randPassword = "";
   password = "";
   result = 0;
   form: FormGroup;
