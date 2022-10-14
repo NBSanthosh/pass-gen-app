@@ -10,11 +10,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class AppComponent {
   title = 'pass-gen-app';
   passlen = 0;
-  pass = '';
-  passwo = '';
-  textHidden = false;
   password = "";
-  result = 0;
+  len = 0;
+  pass = '';
   form: FormGroup;
   alphaUpper = false;
   alphaLower = false;
@@ -25,18 +23,12 @@ export class AppComponent {
     this.form = new FormGroup({
       numeric: new FormControl("", {
         validators: [Validators.required, Validators.pattern(this.numberRegEx)],
-        updateOn: "blur"
+        updateOn: "change"
       })
     });
   }
-  submit() {
-    console.log(this.form.value);
-  }
   onSubmit() {
     alert(JSON.stringify(this.form.value));
-  }
-  onToggle() {
-    this.textHidden = !this.textHidden;
   }
   alphaUFunc() {
     this.alphaUpper = !this.alphaUpper;
@@ -51,7 +43,7 @@ export class AppComponent {
     this.splChar = !this.splChar;
   }
   onClick(passlen) {
-    this.result = parseInt(passlen);
+    this.len = parseInt(passlen);
     var number = "1234567890";
     var alphaU = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var alphaL = "abcdefghijklmnopqrstuvwxyz";
@@ -74,15 +66,15 @@ export class AppComponent {
       passwordType += splC;
       count++;
     }
-    for (var i = 0; i < this.result; i++) {
+    for (var i = 0; i < this.len; i++) {
       this.pass += passwordType.charAt(Math.floor(Math.random() * passwordType.length));
     }
-    if (this.pass.length == this.result)
+    if (this.pass.length == this.len)
       this.password = this.pass;
     this.pass = "";
     if(count == 0)
     alert("Please Select any Checkbox..");
-    //else if(count <=0 || this.result == 0)
+    //else if(count > 0 || this.len == 0)
     //alert("You have forgot to Enter the Number..");
     //this.form.reset();
   }

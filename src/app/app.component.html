@@ -1,45 +1,49 @@
 <div>
-  <div class="center">
-    <h1> Password Generator App</h1>
+
+  <div>
+    <h1>Password Generator App</h1>
   </div>
-  <div class="w3-card-4">
+
+  <div class="container">
+
     <br>
     <form id="myform" class="inner-cont" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
-      <!--style="text-align: center">-->
       <div class="form-group">
         <label>Enter the Length of the Password: </label>
         <input #passlen id="passlen" type="text" class="form-control" formControlName="numeric"
-          placeholder="Enter the length here.." />
+          placeholder="Enter the password length here.." />
       </div>
+
       <div *ngIf="!form.controls['numeric'].valid && form.controls['numeric'].touched">
         <div *ngIf="form.controls['numeric'].errors.required">
-          Enter a valid Number..
+          ** Please Enter a Valid Number **
         </div>
         <div *ngIf="form.controls['numeric'].errors.pattern">
-          Only Numbers are allowed..
+          ** Only Numbers are Allowed in this field **
         </div>
       </div>
+
       <br />
-      <input type="checkbox" id="alphaU" name="alphaU" value="alphaU" (change)="alphaUFunc()">
+      <input type="checkbox" id="alphaU" value="alphaU" (change)="alphaUFunc()">
       <label for="alphaU"> Include Uppercase Alphabets</label><br>
-      <input type="checkbox" id="alphaL" name="alphaL" value="alphaL" (change)="alphaLFunc()">
+      <input type="checkbox" id="alphaL" value="alphaL" (change)="alphaLFunc()">
       <label for="alphaL"> Include Lowercase Alphabets</label><br>
-      <input type="checkbox" id="numb" name="numb" value="numb" (change)="numbFunc()">
+      <input type="checkbox" id="numb" value="numb" (change)="numbFunc()">
       <label for="numb"> Include Numbers</label><br>
-      <input type="checkbox" id="splchar" name="splchar" value="splchar" (change)="splcharFunc()">
+      <input type="checkbox" id="splchar" value="splchar" (change)="splcharFunc()">
       <label for="splchar"> Include Special Characters</label><br>
       <br />
+
       <div style="text-align: center">
-        <button type="button" (click)="onClick(passlen.value)" (click)="onToggle()">
+        <button type="button" (click)="onClick(passlen.value)" >
           GENERATE PASSWORD
         </button>
         <div>
           <h2>{{password}}</h2>
         </div>
-
         <button type="button" (click)="copyText(password)">COPY PASSWORD</button>
-        <!-- <h4 [hidden]="textHidden">{{password}}</h4>  -->
       </div>
+
     </form>
     <br>
   </div>
